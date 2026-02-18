@@ -1,14 +1,18 @@
 import ScrollReveal from "./ScrollReveal";
 
 const Testimonial = () => (
-  <section className="px-6 py-28 md:py-36">
-    <ScrollReveal>
-      <div className="mx-auto max-w-2xl text-center">
-        <span className="font-serif-display text-5xl leading-none text-accent">"</span>
-        <blockquote className="font-serif-display -mt-4 text-2xl italic leading-relaxed md:text-3xl">
+  <section id="testimonials" className="relative px-6 py-28 md:py-36 overflow-hidden">
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-accent/8 blur-3xl" />
+    <ScrollReveal variant="scale">
+      <div className="relative mx-auto max-w-2xl text-center">
+        <span className="font-serif-display block text-8xl leading-none text-accent/30">"</span>
+        <blockquote className="font-serif-display -mt-6 text-2xl italic leading-relaxed md:text-3xl">
           A simple detail that completely changes the experience.
         </blockquote>
-        <p className="mt-8 text-xs uppercase tracking-[0.2em] text-secondary">— Club Director</p>
+        <div className="divider-accent mx-auto mt-8" />
+        <p className="mt-6 text-xs uppercase tracking-[0.2em] text-secondary">
+          — Marcos Rivera, Club Director at Padel Santiago
+        </p>
       </div>
     </ScrollReveal>
   </section>

@@ -9,7 +9,7 @@ const reasons = [
 ];
 
 const WhyFlipScore = () => (
-  <section className="px-6 py-24 md:py-32">
+  <section id="features" className="px-6 py-24 md:py-32">
     <div className="mx-auto max-w-5xl">
       <ScrollReveal>
         <h2 className="font-serif-display text-center text-3xl font-medium md:text-5xl">
@@ -19,8 +19,10 @@ const WhyFlipScore = () => (
       <div className="mt-16 grid gap-12 sm:grid-cols-2 md:grid-cols-4">
         {reasons.map((r, i) => (
           <ScrollReveal key={r.title} delay={i * 0.1}>
-            <div className="text-center">
-              <r.icon className="mx-auto h-6 w-6 text-accent" strokeWidth={1.5} />
+            <div className="group text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 transition-colors group-hover:bg-accent/20">
+                <r.icon className="h-5 w-5 text-accent transition-transform group-hover:scale-110" strokeWidth={1.5} />
+              </div>
               <h3 className="mt-5 text-sm font-semibold uppercase tracking-wider">{r.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-secondary">{r.description}</p>
             </div>

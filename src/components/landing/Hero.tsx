@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/flipscore-logo-transparent-green.png";
 
@@ -10,13 +11,12 @@ const Hero = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Pause the video initially — scroll will drive it
     video.pause();
 
     const handleScroll = () => {
       if (!video || !video.duration) return;
       const scrollY = window.scrollY;
-      const maxScroll = window.innerHeight; // one viewport height of scroll drives full video
+      const maxScroll = window.innerHeight;
       const progress = Math.min(scrollY / maxScroll, 1);
       video.currentTime = progress * video.duration;
     };
@@ -26,7 +26,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-24 overflow-hidden">
+    <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-32 pb-24 overflow-hidden">
       {/* Scroll-driven video background */}
       <video
         ref={videoRef}
@@ -36,8 +36,8 @@ const Hero = () => {
         preload="auto"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      {/* Overlay so text stays readable */}
-      <div className="absolute inset-0 bg-background/60" />
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center w-full max-w-3xl">
@@ -50,7 +50,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
         />
         <motion.h1
-          className="font-serif-display w-full text-center text-5xl font-medium leading-tight tracking-tight md:text-7xl"
+          className="font-serif-display w-full text-center text-4xl font-medium leading-tight tracking-tight md:text-5xl lg:text-7xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -73,18 +73,30 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Button size="lg" className="rounded-none px-10 py-6 text-base tracking-wide">
+          <Button size="lg" className="accent-gradient rounded-md px-10 py-6 text-base tracking-wide text-white border-0 hover:opacity-90">
             Pre-Order Now
           </Button>
           <Button
             variant="outline"
             size="lg"
-            className="rounded-none border-foreground/30 px-10 py-6 text-base tracking-wide hover:bg-foreground/5"
+            className="rounded-md border-foreground/30 px-10 py-6 text-base tracking-wide hover:bg-foreground/5"
           >
             View Product
           </Button>
         </motion.div>
       </div>
+
+      {/* Scroll-down chevron */}
+      <motion.a
+        href="#product"
+        className="absolute bottom-8 z-10 animate-bounce-gentle text-foreground/40 hover:text-foreground/70 transition-colors"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        aria-label="Scroll down"
+      >
+        <ChevronDown className="h-7 w-7" strokeWidth={1.5} />
+      </motion.a>
     </section>
   );
 };

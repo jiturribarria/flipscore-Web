@@ -25,7 +25,11 @@
     --muted-foreground: 150 15% 42%;
 
     --accent: 37 40% 60%;
+    --accent-light: 37 50% 85%;
     --accent-foreground: 160 32% 17%;
+
+    --surface: 40 20% 92%;
+    --surface-elevated: 40 25% 97%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -34,7 +38,7 @@
     --input: 0 0% 85%;
     --ring: 160 32% 17%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 160 32% 17%;
     --sidebar-foreground: 40 23% 95%;
@@ -54,6 +58,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {
@@ -64,5 +69,16 @@
 @layer utilities {
   .font-serif-display {
     font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .accent-gradient {
+    background: linear-gradient(135deg, hsl(37 40% 55%), hsl(37 50% 65%));
+  }
+
+  .divider-accent {
+    width: 3rem;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(37 40% 55%), hsl(37 50% 70%));
+    margin-inline: auto;
   }
 }

@@ -1,3 +1,4 @@
+import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
 import BrandStatement from "@/components/landing/BrandStatement";
 import Problem from "@/components/landing/Problem";
@@ -10,18 +11,21 @@ import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => (
-  <main>
-    <Hero />
-    <BrandStatement />
-    <Problem />
-    <Solution />
-    <Showcase />
-    <WhyFlipScore />
-    <UseCases />
-    <Testimonial />
-    <FinalCTA />
-    <Footer />
-  </main>
+  <>
+    <Navbar />
+    <main>
+      <Hero />
+      <BrandStatement />
+      <Problem />
+      <Solution />
+      <Showcase />
+      <WhyFlipScore />
+      <UseCases />
+      <Testimonial />
+      <FinalCTA />
+      <Footer />
+    </main>
+  </>
 );
 
 export default Index;
