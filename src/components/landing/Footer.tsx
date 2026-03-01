@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Instagram, Mail, Phone, CheckCircle } from "lucide-react";
+import { Instagram, Mail, Phone, CheckCircle, Linkedin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -70,35 +70,27 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Column 4: Newsletter + socials */}
+        {/* Column 4: Social media */}
         <div className="flex flex-col items-center gap-4 md:items-start">
-          <h4 className="text-xs font-semibold uppercase tracking-wider">Stay Updated</h4>
-          {subscribed ? (
-            <div className="flex items-center gap-2 text-sm text-secondary">
-              <CheckCircle className="h-4 w-4 text-accent" />
-              You're subscribed!
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex gap-2">
-              <Input
-                type="email"
-                placeholder="Your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="h-10 w-36 rounded-md border-foreground/20 bg-transparent text-sm placeholder:text-secondary"
-              />
-              <Button className="h-10 rounded-md px-4 text-sm tracking-wide">Subscribe</Button>
-            </form>
-          )}
-          <div className="flex items-center gap-5 pt-2">
+          <h4 className="text-xs font-semibold uppercase tracking-wider">Follow Us on Social Media</h4>
+          <div className="flex items-center gap-5">
             <a
-              href="https://instagram.com/flipscore"
+              href="https://www.instagram.com/flipscorepadel/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-secondary transition-colors hover:text-foreground"
+              className="text-primary transition-colors hover:text-primary/70"
             >
-              <Instagram className="h-5 w-5" strokeWidth={1.5} />
+              <Instagram className="h-6 w-6" strokeWidth={1.5} />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-primary transition-colors hover:text-primary/70"
+            >
+              <Linkedin className="h-6 w-6" strokeWidth={1.5} />
             </a>
           </div>
         </div>
