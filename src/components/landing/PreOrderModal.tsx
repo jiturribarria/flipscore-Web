@@ -16,26 +16,41 @@ interface PreOrderModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
+// Replace with your Google Apps Script Web App URL after deployment
+const SHEET_ENDPOINT = "YOUR_GOOGLE_APPS_SCRIPT_URL";
+
 const PreOrderModal = ({ open, onOpenChange }: PreOrderModalProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setError("");
 
-    const subject = encodeURIComponent(`FlipScore Pre-Order Inquiry from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
+    try {
+      // no-cors is required for Google Apps Script — response can't be read
+      // but the data is still written to the sheet
+      await fetch(SHEET_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-    window.location.href = `mailto:jiturribarria@ucsd.edu?subject=${subject}&body=${body}`;
-
-    setSuccess(true);
-    setName("");
-    setEmail("");
-    setMessage("");
+      setSuccess(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleClose = (open: boolean) => {
@@ -106,11 +121,14 @@ const PreOrderModal = ({ open, onOpenChange }: PreOrderModalProps) => {
                 />
               </div>
 
+              {error && <p className="text-sm text-destructive">{error}</p>}
+
               <Button
                 type="submit"
+                disabled={loading}
                 className="accent-gradient mt-2 rounded-md py-5 text-base tracking-wide text-white border-0 hover:opacity-90"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </>
