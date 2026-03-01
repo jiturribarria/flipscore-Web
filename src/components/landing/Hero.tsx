@@ -1,11 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/flipscore-logo-no-bg.png";
+import PreOrderModal from "./PreOrderModal";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -81,15 +83,20 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Button size="lg" className="accent-gradient rounded-md px-10 py-6 text-base tracking-wide text-white border-0 hover:opacity-90">
+          <Button
+            size="lg"
+            className="accent-gradient rounded-md px-10 py-6 text-base tracking-wide text-white border-0 hover:opacity-90"
+            onClick={() => setModalOpen(true)}
+          >
             Pre-Order Now
           </Button>
           <Button
             variant="outline"
             size="lg"
             className="rounded-md border-foreground/30 px-10 py-6 text-base tracking-wide hover:bg-foreground/5"
+            asChild
           >
-            View Product
+            <a href="#product">View Product</a>
           </Button>
         </motion.div>
       </div>
@@ -105,6 +112,8 @@ const Hero = () => {
       >
         <ChevronDown className="h-7 w-7" strokeWidth={1.5} />
       </motion.a>
+
+      <PreOrderModal open={modalOpen} onOpenChange={setModalOpen} />
     </section>
   );
 };
