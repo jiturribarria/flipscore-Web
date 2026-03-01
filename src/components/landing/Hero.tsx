@@ -11,7 +11,10 @@ const Hero = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    video.pause();
+    const onReady = () => {
+      video.pause();
+      video.currentTime = 0;
+    };
 
     const handleScroll = () => {
       if (!video || !video.duration) return;
@@ -21,8 +24,12 @@ const Hero = () => {
       video.currentTime = progress * video.duration;
     };
 
+    video.addEventListener("canplay", onReady, { once: true });
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      video.removeEventListener("canplay", onReady);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -30,11 +37,13 @@ const Hero = () => {
       {/* Scroll-driven video background */}
       <video
         ref={videoRef}
-        src="/hero-bg.mp4"
+        src={`${import.meta.env.BASE_URL}hero-bg.mp4`}
+        autoPlay
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 h-full w-full object-cover opacity-70"
+        className="absolute inset-0 w-full h-full object-cover opacity-70"
+        style={{ top: 0, left: 0, width: '100%', height: '100%' }}
       />
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/80" />
