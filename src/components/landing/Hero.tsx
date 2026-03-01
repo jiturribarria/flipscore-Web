@@ -43,7 +43,7 @@ const Hero = () => {
         playsInline
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover opacity-70"
-        style={{ top: 0, left: 0, width: '100%', height: '100%' }}
+        style={{ top: 0, left: 0, width: '100%', height: '100%', objectPosition: '47% center' }}
       />
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/80" />
