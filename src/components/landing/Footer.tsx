@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Instagram, Mail, CheckCircle } from "lucide-react";
+import { Instagram, Mail, Phone, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -8,7 +8,6 @@ import logo from "@/assets/flipscore-logo-no-bg.png";
 const quickLinks = [
   { label: "Product", href: "#product" },
   { label: "Features", href: "#features" },
-  { label: "Use Cases", href: "#use-cases" },
   { label: "Testimonials", href: "#testimonials" },
 ];
 
@@ -29,7 +28,7 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-border/50 px-6 py-16">
-      <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-3">
+      <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-4">
         {/* Column 1: Logo + copyright */}
         <div className="flex flex-col items-center gap-4 md:items-start">
           <img src={logo} alt="FlipScore" className="h-8 w-auto" />
@@ -52,7 +51,26 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Column 3: Newsletter + socials */}
+        {/* Column 3: Contact */}
+        <div className="flex flex-col items-center gap-3 md:items-start">
+          <h4 className="text-xs font-semibold uppercase tracking-wider">Contact Us</h4>
+          <a
+            href="mailto:flipscorepadel@gmail.com"
+            className="flex items-center gap-2 text-sm text-secondary transition-colors hover:text-foreground"
+          >
+            <Mail className="h-4 w-4 shrink-0" strokeWidth={1.5} />
+            flipscorepadel@gmail.com
+          </a>
+          <a
+            href="tel:+18588881854"
+            className="flex items-center gap-2 text-sm text-secondary transition-colors hover:text-foreground"
+          >
+            <Phone className="h-4 w-4 shrink-0" strokeWidth={1.5} />
+            +1 (858) 888-1854
+          </a>
+        </div>
+
+        {/* Column 4: Newsletter + socials */}
         <div className="flex flex-col items-center gap-4 md:items-start">
           <h4 className="text-xs font-semibold uppercase tracking-wider">Stay Updated</h4>
           {subscribed ? (
@@ -67,9 +85,9 @@ const Footer = () => {
                 placeholder="Your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="h-10 w-48 rounded-md border-foreground/20 bg-transparent text-sm placeholder:text-secondary"
+                className="h-10 w-36 rounded-md border-foreground/20 bg-transparent text-sm placeholder:text-secondary"
               />
-              <Button className="h-10 rounded-md px-5 text-sm tracking-wide">Subscribe</Button>
+              <Button className="h-10 rounded-md px-4 text-sm tracking-wide">Subscribe</Button>
             </form>
           )}
           <div className="flex items-center gap-5 pt-2">
@@ -81,13 +99,6 @@ const Footer = () => {
               className="text-secondary transition-colors hover:text-foreground"
             >
               <Instagram className="h-5 w-5" strokeWidth={1.5} />
-            </a>
-            <a
-              href="mailto:hello@flipscore.com"
-              aria-label="Email"
-              className="text-secondary transition-colors hover:text-foreground"
-            >
-              <Mail className="h-5 w-5" strokeWidth={1.5} />
             </a>
           </div>
         </div>
