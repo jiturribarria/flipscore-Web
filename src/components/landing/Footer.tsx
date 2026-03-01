@@ -84,7 +84,7 @@ const Footer = () => {
               <Instagram className="h-6 w-6" strokeWidth={1.5} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/112696052/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
