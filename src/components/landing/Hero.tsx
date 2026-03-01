@@ -30,14 +30,14 @@ const Hero = () => {
       {/* Scroll-driven video background */}
       <video
         ref={videoRef}
-        src="/hero-bg.mov"
+        src="/hero-bg.mp4"
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover opacity-70"
       />
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/80" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center w-full max-w-3xl">
