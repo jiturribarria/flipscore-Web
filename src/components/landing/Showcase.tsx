@@ -8,7 +8,7 @@ const items = [
 ];
 
 const Showcase = () => (
-  <section className="bg-surface px-6 py-24 md:py-32">
+  <section id="features" className="bg-surface px-6 py-24 md:py-32">
     <div className="mx-auto max-w-6xl">
       <ScrollReveal>
         <h2 className="font-serif-display text-center text-3xl font-medium md:text-5xl">

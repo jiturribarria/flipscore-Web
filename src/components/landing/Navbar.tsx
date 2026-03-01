@@ -7,7 +7,6 @@ import PreOrderModal from "./PreOrderModal";
 const navLinks = [
   { label: "Product", href: "#product" },
   { label: "Features", href: "#features" },
-  { label: "Use Cases", href: "#use-cases" },
   { label: "Testimonials", href: "#testimonials" },
 ];
 
