@@ -35,18 +35,15 @@ const Hero = () => {
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-32 pb-24 overflow-hidden">
       {/* Scroll-driven video background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <video
-          ref={videoRef}
-          src={`${import.meta.env.BASE_URL}hero-bg.mp4`}
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-          style={{ transform: 'translateX(-3%)' }}
-        />
-      </div>
+      <video
+        ref={videoRef}
+        src={`${import.meta.env.BASE_URL}hero-bg.mp4`}
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover opacity-70"
+      />
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/80" />
 
