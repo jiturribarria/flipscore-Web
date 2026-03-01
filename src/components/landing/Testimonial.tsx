@@ -1,7 +1,7 @@
 import ScrollReveal from "./ScrollReveal";
 
 const Testimonial = () => (
-  <section id="testimonials" className="relative px-6 py-28 md:py-36 overflow-hidden">
+  <section id="testimonials" className="relative bg-surface px-6 py-28 md:py-36 overflow-hidden">
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-accent/8 blur-3xl" />
     <ScrollReveal variant="scale">
       <div className="relative mx-auto max-w-2xl text-center">
