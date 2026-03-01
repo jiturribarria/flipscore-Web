@@ -1,8 +1,7 @@
 import ScrollReveal from "./ScrollReveal";
-import { Zap, BatteryCharging, Sun, Sparkles } from "lucide-react";
+import { BatteryCharging, Sun, Sparkles } from "lucide-react";
 
 const reasons = [
-  { icon: Zap, title: "Instant Score Updates", description: "Flip and display — no delays, no tech." },
   { icon: BatteryCharging, title: "No Batteries Required", description: "Purely mechanical. Always ready to go." },
   { icon: Sun, title: "Built for Outdoor Play", description: "Weather-resistant materials that endure." },
   { icon: Sparkles, title: "Clean Aesthetic", description: "Professional look that elevates every court." },
@@ -16,7 +15,7 @@ const WhyFlipScore = () => (
           Why FlipScore.
         </h2>
       </ScrollReveal>
-      <div className="mt-16 grid gap-12 sm:grid-cols-2 md:grid-cols-4">
+      <div className="mt-16 grid gap-12 sm:grid-cols-3">
         {reasons.map((r, i) => (
           <ScrollReveal key={r.title} delay={i * 0.1}>
             <div className="group text-center">
