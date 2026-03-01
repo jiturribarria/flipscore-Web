@@ -3,9 +3,9 @@ import { Building2, GraduationCap, Users } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
 
 const cases: { who: string; benefit: string; icon: LucideIcon }[] = [
-  { who: "Clubs", benefit: "Elevate the player experience with refined court details.", icon: Building2 },
-  { who: "Coaches", benefit: "Manage matches and training sessions with ease.", icon: GraduationCap },
-  { who: "Players", benefit: "Stay focused on the game — not the score.", icon: Users },
+  { who: "Built for Tournaments", benefit: "Keeps spectators and players aligned at all times. Step away for a moment and return knowing exactly where the match stands.", icon: Building2 },
+  { who: "No More Score Debates", benefit: "Flipscore eliminates confusion, so players can stay focused on the game — not the argument.", icon: GraduationCap },
+  { who: "Instant Court Awareness", benefit: "Walk through your club and instantly see who's up and who's chasing, thanks to clear, visible scoring.", icon: Users },
 ];
 
 const UseCases = () => (
