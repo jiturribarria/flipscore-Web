@@ -16,8 +16,7 @@ interface PreOrderModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-// Replace with your Google Apps Script Web App URL after deployment
-const SHEET_ENDPOINT = "YOUR_GOOGLE_APPS_SCRIPT_URL";
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxFo4Ph5KVUq_5w8TyBbs9u7OlAhjV9V27JR1XZc56I4-YQXxJlMbpWUog08RiZs3QraQ/exec";
 
 const PreOrderModal = ({ open, onOpenChange }: PreOrderModalProps) => {
   const [name, setName] = useState("");
