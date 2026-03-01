@@ -1,9 +1,9 @@
 import ScrollReveal from "./ScrollReveal";
 
 const problems = [
-  { title: "Lost in the Score", description: "Players lose track mid-rally, interrupting the flow of the game." },
-  { title: "Constant Interruptions", description: "Matches pause repeatedly as players debate the current score." },
-  { title: "Unorganized Courts", description: "Without clear scoring, courts feel chaotic and unprofessional." },
+  { title: "Built for Tournaments", description: "Keeps spectators and players aligned at all times. Step away for a moment and return knowing exactly where the match stands." },
+  { title: "No More Score Debates", description: "Flipscore eliminates confusion, so players can stay focused on the game — not the argument." },
+  { title: "Instant Court Awareness", description: "Walk through your club and instantly see who's up and who's chasing, thanks to clear, visible scoring." },
 ];
 
 const Problem = () => (
