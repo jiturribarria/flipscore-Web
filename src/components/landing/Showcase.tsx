@@ -1,10 +1,11 @@
 import ScrollReveal from "./ScrollReveal";
 import productImage from "@/assets/flipscore-render.png";
+import mountedImage from "@/assets/flipscore-mounted.png";
 
 const items = [
-  { label: "Close-up detail", description: "Precision-cut numbers for maximum readability", aspect: "aspect-[4/5]", objectPosition: "object-[center_30%]", scale: "scale-150" },
-  { label: "Mounted view", description: "Magnetic mount fits any court structure", aspect: "aspect-square", objectPosition: "object-center", scale: "scale-110" },
-  { label: "Studio shot", description: "Premium materials built to last", aspect: "aspect-[4/5]", objectPosition: "object-[center_70%]", scale: "scale-125" },
+  { label: "Close-up detail", description: "Precision-cut numbers for maximum readability", aspect: "aspect-[4/5]", objectPosition: "object-[center_30%]", scale: "scale-150", image: productImage },
+  { label: "Mounted view", description: "Magnetic mount fits any court structure", aspect: "aspect-square", objectPosition: "object-center", scale: "scale-110", image: mountedImage },
+  { label: "Studio shot", description: "Premium materials built to last", aspect: "aspect-[4/5]", objectPosition: "object-[center_70%]", scale: "scale-125", image: productImage },
 ];
 
 const Showcase = () => (
@@ -20,7 +21,7 @@ const Showcase = () => (
           <ScrollReveal key={item.label} delay={i * 0.15} variant="scale">
             <div className={`group relative overflow-hidden rounded-md ${item.aspect} bg-foreground/5 ring-2 ring-transparent transition-all duration-500 hover:ring-accent/40`}>
               <img
-                src={productImage}
+                src={item.image}
                 alt={`FlipScore ${item.label}`}
                 className={`h-full w-full object-cover ${item.objectPosition} ${item.scale} transition-transform duration-700 group-hover:scale-[1.05]`}
                 loading="lazy"
