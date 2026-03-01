@@ -2,7 +2,7 @@ import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import productImage from "@/assets/flipscore-render.png";
+import productImage from "@/assets/flipscore-product.png";
 import PreOrderModal from "./PreOrderModal";
 
 const features = [
