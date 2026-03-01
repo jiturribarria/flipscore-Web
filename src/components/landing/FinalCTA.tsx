@@ -22,7 +22,7 @@ const FinalCTA = () => {
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button
               size="lg"
-              className="accent-gradient rounded-md px-10 py-6 text-base tracking-wide text-white border-0 hover:opacity-90"
+              className="rounded-md px-10 py-6 text-base tracking-wide bg-white text-primary border-0 hover:bg-white/90"
               onClick={() => setModalOpen(true)}
             >
               Pre-Order Now
