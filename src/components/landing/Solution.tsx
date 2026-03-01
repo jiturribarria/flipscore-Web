@@ -16,7 +16,7 @@ const Solution = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <section id="product" className="px-6 py-24 md:py-32">
+    <section id="product" className="bg-white px-6 py-24 md:py-32">
       <div className="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2 lg:gap-20">
         <ScrollReveal variant="fadeRight">
           <img
