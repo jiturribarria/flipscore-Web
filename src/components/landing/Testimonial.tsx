@@ -7,11 +7,11 @@ const Testimonial = () => (
       <div className="relative mx-auto max-w-2xl text-center">
         <span className="font-serif-display block text-8xl leading-none text-accent/30">"</span>
         <blockquote className="font-serif-display -mt-6 text-2xl italic leading-relaxed md:text-3xl">
-          A simple detail that completely changes the experience.
+          Hands down the best padel scoring system out there. It's simple, functional, and adds a sleek stainless steel touch that really elevates the court.
         </blockquote>
         <div className="divider-accent mx-auto mt-8" />
         <p className="mt-6 text-xs uppercase tracking-[0.2em] text-secondary">
-          — Marcos Rivera, Club Director at Padel Santiago
+          — Frederik Wittrup Andersen, Director of Operations @ Padel N9NE
         </p>
       </div>
     </ScrollReveal>
