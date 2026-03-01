@@ -16,41 +16,26 @@ interface PreOrderModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnnqgevw";
-
 const PreOrderModal = ({ open, onOpenChange }: PreOrderModalProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setError("");
 
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ name, email, message }),
-      });
+    const subject = encodeURIComponent(`FlipScore Pre-Order Inquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
 
-      if (res.ok) {
-        setSuccess(true);
-        setName("");
-        setEmail("");
-        setMessage("");
-      } else {
-        setError("Something went wrong. Please try again.");
-      }
-    } catch {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
+    window.location.href = `mailto:jiturribarria@ucsd.edu?subject=${subject}&body=${body}`;
+
+    setSuccess(true);
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   const handleClose = (open: boolean) => {
@@ -121,14 +106,11 @@ const PreOrderModal = ({ open, onOpenChange }: PreOrderModalProps) => {
                 />
               </div>
 
-              {error && <p className="text-sm text-destructive">{error}</p>}
-
               <Button
                 type="submit"
-                disabled={loading}
                 className="accent-gradient mt-2 rounded-md py-5 text-base tracking-wide text-white border-0 hover:opacity-90"
               >
-                {loading ? "Sending..." : "Send Message"}
+                Send Message
               </Button>
             </form>
           </>
