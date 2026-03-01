@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/flipscore-logo-transparent-green.png";
+import logo from "@/assets/flipscore-logo-no-bg.png";
 
 const navLinks = [
   { label: "Product", href: "#product" },
@@ -39,7 +39,7 @@ const Navbar = () => {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#" className="relative z-50">
-          <img src={logo} alt="FlipScore" className="h-8 w-auto mix-blend-multiply" />
+          <img src={logo} alt="FlipScore" className="h-8 w-auto" />
         </a>
 
         {/* Desktop links */}

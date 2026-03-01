@@ -3,7 +3,7 @@ import { Instagram, Mail, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import logo from "@/assets/flipscore-logo.png";
+import logo from "@/assets/flipscore-logo-no-bg.png";
 
 const quickLinks = [
   { label: "Product", href: "#product" },
