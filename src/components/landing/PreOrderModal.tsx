@@ -32,13 +32,15 @@ const PreOrderModal = ({ open, onOpenChange }: PreOrderModalProps) => {
     setError("");
 
     try {
-      // no-cors is required for Google Apps Script — response can't be read
-      // but the data is still written to the sheet
+      const formData = new URLSearchParams();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("message", message);
+
       await fetch(SHEET_ENDPOINT, {
         method: "POST",
         mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: formData,
       });
 
       setSuccess(true);
