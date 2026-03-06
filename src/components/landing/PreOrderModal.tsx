@@ -16,7 +16,7 @@ interface PreOrderModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxFo4Ph5KVUq_5w8TyBbs9u7OlAhjV9V27JR1XZc56I4-YQXxJlMbpWUog08RiZs3QraQ/exec";
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwAFWFKgjDqX5Wm336p5hvMVKexvWVk1nmuHJfkBzFqG60YYnnZOBbRc5c5w2FBIcbvnw/exec";
 
 const PreOrderModal = ({ open, onOpenChange }: PreOrderModalProps) => {
   const [name, setName] = useState("");
