@@ -79,9 +79,9 @@ const PreOrderModal = ({ open, onOpenChange }: PreOrderModalProps) => {
         ) : (
           <>
             <DialogHeader>
-              <DialogTitle className="font-serif-display text-2xl">Pre-Order FlipScore</DialogTitle>
+              <DialogTitle className="font-serif-display text-2xl">Order Now</DialogTitle>
               <DialogDescription>
-                Fill in your details and we'll get back to you with pre-order information.
+                Fill in your details and we'll get back to you with your order information.
               </DialogDescription>
             </DialogHeader>
 
