@@ -65,7 +65,7 @@ const Navbar = () => {
               className="accent-gradient rounded-md px-6 text-sm tracking-wide text-white border-0 hover:opacity-90"
               onClick={openModal}
             >
-              Pre-Order
+              Order Now
             </Button>
           </div>
 
@@ -101,7 +101,7 @@ const Navbar = () => {
               className="accent-gradient mt-4 rounded-md px-10 text-base tracking-wide text-white border-0"
               onClick={openModal}
             >
-              Pre-Order
+              Order Now
             </Button>
           </div>
         )}
