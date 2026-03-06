@@ -15,7 +15,7 @@ const Showcase = () => (
           Crafted in Every Detail.
         </h2>
       </ScrollReveal>
-      <div className="mt-16 grid gap-6 sm:grid-cols-2">
+      <div className="mt-16 grid gap-6 sm:grid-cols-2 w-4/5 mx-auto">
         {items.map((item, i) => (
           <ScrollReveal key={item.label} delay={i * 0.15} variant="scale">
             <div className="group relative overflow-hidden rounded-md aspect-square bg-foreground/5 ring-2 ring-transparent transition-all duration-500 hover:ring-accent/40">

@@ -22,7 +22,7 @@ const Solution = () => {
           <img
             src={productImage}
             alt="FlipScore magnetic scoreboard product render"
-            className="w-full rounded-md"
+            className="w-4/5 mx-auto block rounded-md"
             loading="lazy"
           />
         </ScrollReveal>
