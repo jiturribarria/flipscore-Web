@@ -25,7 +25,7 @@ const FinalCTA = () => {
               className="rounded-md px-10 py-6 text-base tracking-wide bg-white text-primary border-0 hover:bg-white/90"
               onClick={() => setModalOpen(true)}
             >
-              Pre-Order Now
+              Order Now
             </Button>
             <a
               href="#product"

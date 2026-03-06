@@ -89,7 +89,7 @@ const Hero = () => {
             className="accent-gradient rounded-md px-10 py-6 text-base tracking-wide text-white border-0 hover:opacity-90"
             onClick={() => setModalOpen(true)}
           >
-            Pre-Order Now
+            Order Now
           </Button>
           <Button
             variant="outline"
