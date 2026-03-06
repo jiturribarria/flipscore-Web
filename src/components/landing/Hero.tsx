@@ -36,6 +36,18 @@ const Hero = () => {
 
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-32 pb-24 overflow-hidden">
+      {/* Scroll-driven video background */}
+      <video
+        ref={videoRef}
+        src={`${import.meta.env.BASE_URL}hero-bg.mp4`}
+        muted
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover opacity-70"
+      />
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/80" />
+
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center w-full max-w-3xl">
         <motion.img
@@ -46,24 +58,6 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         />
-
-        {/* Scroll-driven product video */}
-        <motion.div
-          className="w-full flex justify-center mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.1 }}
-        >
-          <video
-            ref={videoRef}
-            src={`${import.meta.env.BASE_URL}hero-bg.mp4`}
-            muted
-            playsInline
-            preload="auto"
-            className="w-full max-w-lg rounded-xl"
-          />
-        </motion.div>
-
         <motion.h1
           className="font-serif-display w-full text-center text-4xl font-medium leading-tight tracking-tight md:text-5xl lg:text-7xl"
           initial={{ opacity: 0, y: 30 }}
