@@ -40,6 +40,7 @@ const Hero = () => {
       <video
         ref={videoRef}
         src={`${import.meta.env.BASE_URL}hero-bg.mp4`}
+        autoPlay
         muted
         playsInline
         preload="auto"
