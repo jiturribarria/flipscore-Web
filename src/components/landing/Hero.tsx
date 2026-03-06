@@ -44,6 +44,7 @@ const Hero = () => {
         muted
         playsInline
         preload="auto"
+        disableRemotePlayback
         className="absolute inset-0 w-full h-full object-cover opacity-70"
       />
       {/* Gradient overlay */}
